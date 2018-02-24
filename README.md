@@ -10,7 +10,7 @@ Another way would be to send 2 messages (= 24 bytes) so we can combine MAC Addre
 
 How to
 Upload the following files to your SiPy :
-
-main.py
-sigfox.py
-wifiscan.py
+- boot.py
+- main.py
+- sigfox.py
+- wifiscan.py
