@@ -1,9 +1,16 @@
 # Firmware
-The firmware is developed for location tracking hardware based on the ESP32
-Basic Firmware functions
-  - scans for WiFi MAC addresses and uses RSSI to compute signal stength 
-  - sends a packet via Sigfox/Lora comprised off: MAC addresses, RSSI and battery voltage
-  - goes into deep sleep states and wakes up every N seconds to send a packet
-  - can send a location packet 6 times per hour and have a battery life of 30+ days on a 300mAh battery
- 
-  
+SiPy - Retrieve wifi networks around
+Use the onboard WiFi chip to scan accessible Wifi networks locally.
+
+Sort them, and select the two strongest ones, based on the Received Signal Strength Intensity.
+
+Use the onboard Sigfox module to send these two Mac adresses to our application server.
+Sigfox allows for a 12-byte useful payload, so we can send two 6-bytes mac adresses over the network.
+Another way would be to send 2 messages (= 24 bytes) so we can combine MAC Address + RSSI for higher precision
+
+How to
+Upload the following files to your SiPy :
+
+main.py
+sigfox.py
+wifiscan.py
